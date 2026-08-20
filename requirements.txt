@@ -7,6 +7,7 @@ uvicorn[standard]==0.30.6 # Serveur ASGI qui exécute l'application FastAPI
 sqlalchemy==2.0.35        # ORM : mappe les classes Python vers les tables MySQL
 pymysql==1.1.1            # Pilote de connexion Python <-> MySQL
 pydantic==2.9.2           # Validation des données (utilisé par schemas.py)
+email-validator==2.2.0
 pydantic-settings==2.5.2  # Lecture typée des variables d'environnement (config.py)
 python-jose[cryptography]==3.3.0  # Création/lecture des tokens JWT
 passlib==1.7.4            # Hachage sécurisé des mots de passe
