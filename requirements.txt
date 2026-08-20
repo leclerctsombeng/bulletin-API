@@ -1,0 +1,20 @@
+# requirements.txt
+# Liste exacte des bibliothèques nécessaires pour exécuter l'API.
+# Installation : pip install -r requirements.txt --break-system-packages
+
+fastapi==0.115.0          # Framework web pour construire l'API REST
+uvicorn[standard]==0.30.6 # Serveur ASGI qui exécute l'application FastAPI
+sqlalchemy==2.0.35        # ORM : mappe les classes Python vers les tables MySQL
+pymysql==1.1.1            # Pilote de connexion Python <-> MySQL
+pydantic==2.9.2           # Validation des données (utilisé par schemas.py)
+pydantic-settings==2.5.2  # Lecture typée des variables d'environnement (config.py)
+python-jose[cryptography]==3.3.0  # Création/lecture des tokens JWT
+passlib==1.7.4            # Hachage sécurisé des mots de passe
+bcrypt==4.0.1              # Épinglé volontairement : les versions >= 4.1
+                            # de bcrypt ont retiré l'attribut __about__.__version__
+                            # que passlib 1.7.4 utilise pour se configurer,
+                            # ce qui provoque une erreur au premier hachage.
+                            # (bug connu passlib/bcrypt, corrigé ici par un
+                            # pin de version plutôt que par une dépendance
+                            # non maintenue).
+python-multipart==0.0.9   # Nécessaire pour lire les formulaires (connexion OAuth2)
